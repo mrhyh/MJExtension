@@ -9,6 +9,8 @@
 #import "MJStatusResult.h"
 
 @implementation MJStatusResult
+
+
 + (NSDictionary *)mj_objectClassInArray
 {
     return @{

@@ -68,7 +68,7 @@ void keyValues2object()
                            @"height" : @1.55,
                            @"money" : @"100.9",
                            @"sex" : @(SexFemale),
-                           @"gay" : @"1"
+                           @"gay" : @"1",
                        //  @"gay" : @"NO"
                        //  @"gay" : @"true"
                            };
@@ -176,7 +176,8 @@ void keyValues2object3()
                            
                            @"totalNumber" : @"2014",
                            @"previousCursor" : @"13476589",
-                           @"nextCursor" : @"13476599"
+                           @"nextCursor" : @"13476599",
+                           @"name":@"textName"
                            };
     
     // 2.将字典转为MJStatusResult模型
@@ -197,6 +198,8 @@ void keyValues2object3()
     for (MJAd *ad in result.ads) {
         MJExtensionLog(@"image=%@, url=%@", ad.image, ad.url);
     }
+    
+    
 }
 
 /**
@@ -257,12 +260,15 @@ void keyValuesArray2objectArray()
                                }
                            ];
     
+    
+    
     // 2.将字典数组转为MJUser模型数组
     NSArray *userArray = [MJUser mj_objectArrayWithKeyValuesArray:dictArray];
     
     // 3.打印userArray数组中的MJUser模型属性
     for (MJUser *user in userArray) {
-        MJExtensionLog(@"name=%@, icon=%@", user.name, user.icon);
+        MJExtensionLog(@"icon=%@",user.icon);
+       // MJExtensionLog(@"name=%@, icon=%@", user.name, user.icon);
     }
 }
 
@@ -352,7 +358,7 @@ void coreData()
     // 利用CoreData保存模型
     [context save:nil];
     
-    MJExtensionLog(@"name=%@, icon=%@, age=%zd, height=%f, money=%@, sex=%d, gay=%d", user.name, user.icon, user.age, user.height, user.money, user.sex, user.gay);
+    MJExtensionLog(@"name=%@, icon=%@, age=%zd, height=%@, money=%@, sex=%d, gay=%d", user.name, user.icon, user.age, user.height, user.money, user.sex, user.gay);
 }
 
 /**
